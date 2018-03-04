@@ -31,7 +31,7 @@ class StudentProfile(UserProfile):
     date_of_birth = models.DateField(blank=False, null=False, verbose_name=_('date of birth'))
     pesel = models.CharField(blank=False, max_length=9, null=False, verbose_name=_('PESEL'))
     place_of_birth = models.TextField(verbose_name=_('place of birth'))
-    parents_profiles = models.ManyToManyField(ParentProfile, blank=True, null=True, related_name='children',
+    parents_profiles = models.ManyToManyField(ParentProfile, blank=True, related_name='children',
                                               verbose_name=_('parent profile'))
     user = models.OneToOneField(User, blank=True, db_column='user_id', on_delete=models.PROTECT, null=True,
                                 primary_key=False, related_name='student_profile', verbose_name=_('user object'))
