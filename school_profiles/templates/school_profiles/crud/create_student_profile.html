@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <div class="ui centered grid">
+        <form class="ui eight wide column form" method="post" novalidate>
+            {% csrf_token %}
+            <h3 class="ui dividing header">{% trans "Student" %}</h3>
+
+            <div class="two fields">
+                <div class="field">
+                    <label class="left aligned">{{ form.names.label }}</label>
+                    <div class="ui input">
+                        {{ form.names }}
+                    </div>
+                    {% if form.names.errors %}
+                        <div class="ui negative message">
+                            {% for error in form.names.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="field">
+                    <label class="left aligned">{{ form.surname.label }}</label>
+                    <div class="ui input">
+                        {{ form.surname }}
+                    </div>
+                    {% if form.surname.errors %}
+                        <div class="ui negative message">
+                            {% for error in form.surname.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label class="left aligned">{{ form.date_of_birth.label }}</label>
+                    <div class="ui input">
+                        {{ form.date_of_birth }}
+                    </div>
+                    {% if form.date_of_birth.errors %}
+                        <div class="ui negative message">
+                            {% for error in form.date_of_birth.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="field">
+                    <label class="left aligned">{{ form.place_of_birth.label }}</label>
+                    <div class="ui input">
+                        {{ form.place_of_birth }}
+                    </div>
+                    {% if form.place_of_birth.errors %}
+                        <div class="ui negative message">
+                            {% for error in form.place_of_birth.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="field">
+                <label>{{ form.pesel.label }}</label>
+                <div class="fields">
+                    <div class="sixteen wide field">
+                        <div class="ui input">
+                            {{ form.pesel }}
+                        </div>
+                        {% if form.pesel.errors %}
+                            <div class="ui negative message">
+                                {% for error in form.pesel.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <button class="ui primary button" type="submit">Save</button>
+        </form>
+    </div>
+{% endblock %}

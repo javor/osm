@@ -13,6 +13,9 @@ class StudentProfileForm(forms.ModelForm):
     class Meta:
         model = StudentProfile
         fields = '__all__'
+        widgets = {
+            'date_of_birth': forms.DateInput(attrs={'type': 'date'})  # TODO: Use calendar from Semantic-UI
+        }
 
 
 class TeacherProfileForm(forms.ModelForm):
