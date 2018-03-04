@@ -1,0 +1,15 @@
+{
+  "name": "osm-js-libs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "semantic-ui": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
